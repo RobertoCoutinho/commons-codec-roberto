@@ -36,6 +36,11 @@ public class DecoderExceptionTest {
     public void testConstructor0() {
         final DecoderException e = new DecoderException();
         assertNull(e.getMessage());
+    }
+
+    @Test
+    public void testConstructor02() {
+        final DecoderException e = new DecoderException();
         assertNull(e.getCause());
     }
 
@@ -43,6 +48,11 @@ public class DecoderExceptionTest {
     public void testConstructorString() {
         final DecoderException e = new DecoderException(MSG);
         assertEquals(MSG, e.getMessage());
+    }
+
+    @Test
+    public void testConstructorString2() {
+        final DecoderException e = new DecoderException(MSG);
         assertNull(e.getCause());
     }
 
@@ -50,6 +60,11 @@ public class DecoderExceptionTest {
     public void testConstructorStringThrowable() {
         final DecoderException e = new DecoderException(MSG, t);
         assertEquals(MSG, e.getMessage());
+    }
+
+    @Test
+    public void testConstructorStringThrowable2() {
+        final DecoderException e = new DecoderException(MSG, t);
         assertEquals(t, e.getCause());
     }
 
@@ -57,7 +72,11 @@ public class DecoderExceptionTest {
     public void testConstructorThrowable() {
         final DecoderException e = new DecoderException(t);
         assertEquals(t.getClass().getName(), e.getMessage());
-        assertEquals(t, e.getCause());
     }
 
+    @Test
+    public void testConstructorThrowable2() {
+        final DecoderException e = new DecoderException(t);
+        assertEquals(t, e.getCause());
+    }
 }
